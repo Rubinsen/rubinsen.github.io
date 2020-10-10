@@ -51,10 +51,10 @@ particlesJS('particles-js',
       },
       "line_linked": {
         "enable": true,
-        "distance": 100,
+        "distance": 200,
         "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
+        "opacity": 0.2,
+        "width": 0.7
       },
       "move": {
         "enable": true,
