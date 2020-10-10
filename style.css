@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+}
+
+#countdown {
+    color: blueviolet;
+    font-size: 6cm;
+    margin: auto;
+    text-align: center;
+}
+
+#progress {
+    width: 100%;
+    background-color: white;
+}
+
+#progress-bar {
+    width: 1%;
+    height: 30px;
+    background-color: blueviolet;
+}
+
+#percent-progress {
+    color: white;
+    text-align: center;
+    height: auto;
+    padding: 3px;
+    margin: auto;
+}
