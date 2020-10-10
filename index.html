@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
+
+		<title>Countdown</title>
+		<script>
+			var countDownDate = new Date("June 22, 2022 0:00:00").getTime();
+
+			setInterval(() => {
+				var now = new Date().getTime();
+				var distance = countDownDate - now;
+
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor(
+					(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				);
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+				var daysPast = 937 - days;
+				var percentProgress = (daysPast / 973) * 100;
+				document.getElementById("progress-bar").style.width = percentProgress + "%";
+				document.getElementById("percent-progress").innerHTML = percentProgress.toFixed(2) + "%";
+
+			}, 1000);
+		</script>
+	</head>
+
+	<body style="background-color: black;">
+		<h1 id="countdown" style="color: blueviolet; font-size: 6cm; margin: auto; text-align: center;"></h1>
+
+		<div id="progress" style="width: 100%; background-color: white;">
+			<div id="progress-bar" style="width: 1%; height: 30px; background-color: blueviolet;">
+				<p id="percent-progress" style="color: white; text-align: center; height: auto; padding: 3px; margin: auto;"></p>
+			</div>
+		</div>
+	</body>
+</html>
