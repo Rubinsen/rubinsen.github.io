@@ -123,7 +123,7 @@ particlesJS('particles-js',
   
 
 setInterval(() => {
-  document.body.style.overflow = 'hidden';         // prevent scrolling
+  //document.body.style.overflow = 'hidden';         // prevent scrolling
 
 	var now = new Date().getTime();
 	var distance = countDownDate - now;
