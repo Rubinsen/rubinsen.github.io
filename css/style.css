@@ -2,6 +2,11 @@ body {
     background-color: black;
 }
 
+#jonathan {
+    color: white;
+    text-align: center;
+}
+
 #countdown {
     color: blueviolet;
     font-size: 5cm;
