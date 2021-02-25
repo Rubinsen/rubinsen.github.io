@@ -6,6 +6,8 @@ const startDate = new Date("October 23, 2019 0:00:00").getTime();
 const endDate = new Date("June 22, 2022 0:00:00").getTime();
 
 
+
+
 particlesJS('particles-js',
   
   {
@@ -70,7 +72,7 @@ particlesJS('particles-js',
         "straight": false,
         "out_mode": "out",
         "attract": {
-          "enable": true,
+          "enable": false,
           "rotateX": 600,
           "rotateY": 1200
         }
