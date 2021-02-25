@@ -1,22 +1,30 @@
+const countdown = document.getElementById('countdown');
+const progressBar = document.getElementById('progress-bar');
+const percentProgress = document.getElementById('percent-progress');
+
+const startDate = new Date("October 23, 2019 0:00:00").getTime();
+const endDate = new Date("June 22, 2022 0:00:00").getTime();
+
+
 particlesJS('particles-js',
   
   {
     "particles": {
       "number": {
-        "value": 150,
+        "value": 160,
         "density": {
           "enable": true,
           "value_area": 800
         }
       },
       "color": {
-        "value": "#8a2be2"
+        "value": "#ffffff"
       },
       "shape": {
         "type": "circle",
         "stroke": {
           "width": 0,
-          "color": "#000000"
+          "color": "#ffffff"
         },
         "polygon": {
           "nb_sides": 5
@@ -28,7 +36,7 @@ particlesJS('particles-js',
         }
       },
       "opacity": {
-        "value": 0.6,
+        "value": 0.5,
         "random": true,
         "anim": {
           "enable": false,
@@ -38,7 +46,7 @@ particlesJS('particles-js',
         }
       },
       "size": {
-        "value": 20,
+        "value": 3,
         "random": true,
         "anim": {
           "enable": false,
@@ -48,7 +56,7 @@ particlesJS('particles-js',
         }
       },
       "line_linked": {
-        "enable": true,
+        "enable": false,
         "distance": 200,
         "color": "#ffffff",
         "opacity": 0.2,
@@ -56,13 +64,13 @@ particlesJS('particles-js',
       },
       "move": {
         "enable": true,
-        "speed": 2,
+        "speed": 0.5,
         "direction": "none",
         "random": false,
         "straight": false,
         "out_mode": "out",
         "attract": {
-          "enable": false,
+          "enable": true,
           "rotateX": 600,
           "rotateY": 1200
         }
@@ -118,11 +126,9 @@ particlesJS('particles-js',
   }
 
 );
-  
+
 
 setInterval(() => {
-  var startDate = new Date("October 23, 2019 0:00:00").getTime();
-  var endDate = new Date("June 22, 2022 0:00:00").getTime();
   var currentDate = new Date().getTime();
   
 	var distance = endDate - currentDate;
@@ -130,10 +136,9 @@ setInterval(() => {
 	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor(distance % (1000 * 60) / 1000);
-  document.getElementById('countdown').innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+  countdown.innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
     
-	var percentProgress = (currentDate - startDate) / (endDate - startDate) * 100;
-	document.getElementById('progress-bar').style.width = percentProgress + '%';
-	document.getElementById('percent-progress').innerHTML = percentProgress.toFixed(2) + "%";
-    
+	var percentDone = (currentDate - startDate) / (endDate - startDate) * 100;
+	progressBar.style.strokeDasharray = percentDone.toFixed(2) + '100';
+	percentProgress.innerHTML = percentDone.toFixed(2) + '%';
 }, 1000);
