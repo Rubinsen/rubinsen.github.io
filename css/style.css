@@ -25,7 +25,7 @@ circle {
     fill: #456b9d;
     stroke: #e63946;
     stroke-width: 32;
-    stroke-dasharray: 50 100;
+    stroke-dasharray: 0 100;
 }
 
 #percent-progress {
